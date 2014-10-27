@@ -1,0 +1,21 @@
+{
+  "name": "GemStoreApp",
+  "version": "0.0.1",
+  "homepage": "https://github.com/DeirdreAllison/gem-store-with-rails",
+  "authors": [
+    "DEIRDRE ALLISON <DEIRDRE9@GMAIL.com>"
+  ],
+  "description": "Hook gem store app from code school up to rails back end",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "vendor/assets/components",
+    "test",
+    "tests"
+  ],
+   "dependencies": {
+   "bootstrap": "~3.0.0"
+  }
+}
