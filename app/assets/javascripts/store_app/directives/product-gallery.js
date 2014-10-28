@@ -2,7 +2,7 @@
 app.directive("productGallery", function() {
   return {
     restrict: "E",
-    templateUrl: "product-gallery.html",
+    templateUrl: "/products/gallery.html",
     controller: function() {
       this.current = 0;
       this.setCurrent = function(imageNumber){

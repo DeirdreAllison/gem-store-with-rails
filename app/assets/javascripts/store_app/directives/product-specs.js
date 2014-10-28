@@ -2,6 +2,6 @@
 app.directive("productSpecs", function() {
   return {
     restrict:"A",
-    templateUrl: "product-specs.html"
+    templateUrl: "/products/specs.html"
   };
 });

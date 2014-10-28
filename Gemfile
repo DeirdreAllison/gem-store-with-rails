@@ -20,7 +20,7 @@ gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
 # bundle exec rake doc:rails generates the API under doc/api.
 gem 'sdoc', '~> 0.4.0', group: :doc
-
+gem 'pg'
 
 group :development, :test do
   # Call 'debugger' anywhere in the code to stop execution and get a debugger console
@@ -34,7 +34,6 @@ group :development, :test do
 end
 
 group :production do
-  gem 'pg'
   gem 'rails_12factor'
 end
 
