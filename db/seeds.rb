@@ -1,7 +1,8 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rake db:seed (or created alongside the db with db:setup).
-#
-# Examples:
-#
-#   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
-#   Mayor.create(name: 'Emanuel', city: cities.first)
+Product.create!(name: 'Azurite',
+    description: 'Some gems have hidden qualities beyond their luster, beyond their shine... Azurite is one of those gems.',
+    shine: 8,
+    price: 110.50,
+    rarity: 7,
+    color: '#CCC',
+    faces: 14,
+    images: 'images/gem-02.gif')
