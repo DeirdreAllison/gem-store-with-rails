@@ -4,7 +4,13 @@ class CreatingProductsTest < ActionDispatch::IntegrationTest
   test 'created books with valid data' do
     post '/products', { product: {
       name: 'Azurite',
-      rarity: 7
+      description: 'Some gems have hidden qualities beyond their luster, beyond their shine... Azurite is one of those gems.',
+      shine: 8,
+      price: 110.50,
+      rarity: 7,
+      color: '#CCC',
+      faces: 14,
+      images: 'images/gem-02.gif'
       } }.to_json,
       { 'Accept' => 'application/json',
         'Content-Type' => 'application/json'}
@@ -16,6 +22,12 @@ class CreatingProductsTest < ActionDispatch::IntegrationTest
 
     assert_equal 'Azurite', product[:name]
     assert_equal 7, product[:rarity].to_i
+    assert_equal 'Some gems have hidden qualities beyond their luster, beyond their shine... Azurite is one of those gems.', product[:description]
+    assert_equal 8, product[:shine]
+    assert_equal '110.5', product[:price]
+    assert_equal '#CCC', product[:color]
+    assert_equal 14, product[:faces]
+    assert_equal 'images/gem-02.gif', product[:images]
   end
 
   test 'does not create books with valid data' do

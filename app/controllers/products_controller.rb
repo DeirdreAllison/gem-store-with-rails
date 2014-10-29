@@ -16,7 +16,14 @@ class ProductsController < ApplicationController
     end
   end
 
+  def destroy
+    product = Product.find(params[:id])
+    product.destroy!
+    render nothing: true, status: 204
+  end
+
   def product_params
-    params.require(:product).permit(:name, :rarity)
+    params.require(:product).permit(:name, :description, :shine, :price, :rarity,
+             :color, :faces, :images)
   end
 end
