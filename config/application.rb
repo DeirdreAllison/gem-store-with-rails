@@ -22,7 +22,6 @@ module GemStoreWithRails
     config.generators do |g|
         g.stylesheets false
         g.javascripts false
-        g.test_framework false
         g.helper false
     end
 
