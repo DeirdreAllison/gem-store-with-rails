@@ -2,7 +2,8 @@ require 'test_helper'
 
 class ListingProductsTest < ActionDispatch::IntegrationTest
   setup do
-    Product.create!(name: 'Azurite',
+    @fancy = Category.create!(name: 'Fancy')
+    @fancy.products.create(name: 'Azurite',
     description: 'Some gems have hidden qualities beyond their luster, beyond their shine... Azurite is one of those gems.',
     shine: 8,
     price: 110.50,
