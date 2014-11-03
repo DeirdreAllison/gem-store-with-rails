@@ -12,6 +12,7 @@ gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'pg'
 gem 'active_model_serializers', git: 'https://github.com/rails-api/active_model_serializers.git'
+gem 'devise', '3.4.1'
 
 group :development, :test do
   gem 'byebug'

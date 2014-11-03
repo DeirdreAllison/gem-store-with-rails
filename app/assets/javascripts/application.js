@@ -13,5 +13,7 @@
 //= require jquery
 //= require jquery_ujs
 //= require angular.min
+//= require angular-route.min
+//= require angular-cookies.min
 //= require gem-store
 //= require bootstrap/dist/js/bootstrap
