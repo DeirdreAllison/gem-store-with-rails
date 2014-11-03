@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
-  get 'angular/show'
-  root 'angular#show'
+  get 'angular/index'
+  root 'angular#index'
 
-  resources :products
-  resources :categories
+  namespace :apiv1 do
+    resources :products
+    resources :categories
+  end
 end

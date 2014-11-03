@@ -5,7 +5,7 @@ class DeletingProductsTestTest < ActionDispatch::IntegrationTest
     @product = Product.create!(name: 'Azurite')
   end
   test 'delete products' do
-    delete "/products/#{@product.id}"
+    delete "#/products/#{@product.id}"
 
     assert_equal 204, response.status
   end

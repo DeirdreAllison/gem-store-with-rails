@@ -1,3 +1,10 @@
+GIT
+  remote: https://github.com/rails-api/active_model_serializers.git
+  revision: 5acd0be287e68600bd7af9d94e4d2d2c9bed6086
+  specs:
+    active_model_serializers (0.10.0.pre)
+      activemodel (>= 4.0)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -20,8 +27,6 @@ GEM
       erubis (~> 2.7.0)
       rails-dom-testing (~> 1.0, >= 1.0.3)
       rails-html-sanitizer (~> 1.0, >= 1.0.1)
-    active_model_serializers (0.9.0)
-      activemodel (>= 3.2)
     activejob (4.2.0.beta2)
       activesupport (= 4.2.0.beta2)
       globalid (>= 0.3.0)
@@ -188,7 +193,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  active_model_serializers
+  active_model_serializers!
   byebug
   coffee-rails (~> 4.0.0)
   jbuilder (~> 2.0)

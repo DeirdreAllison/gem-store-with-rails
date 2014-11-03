@@ -2,7 +2,8 @@ require 'test_helper'
 
 class ListingProductsTest < ActionDispatch::IntegrationTest
   setup do
-    Product.create!(name: 'Azurite',
+    @fancy = Category.create!(name: 'Fancy')
+    @fancy.products.create(name: 'Azurite',
     description: 'Some gems have hidden qualities beyond their luster, beyond their shine... Azurite is one of those gems.',
     shine: 8,
     price: 110.50,
@@ -13,7 +14,7 @@ class ListingProductsTest < ActionDispatch::IntegrationTest
   end
 
   test 'listing products' do
-  get '/products'
+  get '#/products'
 
   assert_equal 200, response.status
   assert_equal Mime::JSON, response.content_type
@@ -23,7 +24,7 @@ class ListingProductsTest < ActionDispatch::IntegrationTest
   end
 
   test 'lists rare products' do
-    get '/products?rarity=7'
+    get '#/products?rarity=7'
 
     assert_equal 200, response.status
     assert_equal Mime::JSON, response.content_type
