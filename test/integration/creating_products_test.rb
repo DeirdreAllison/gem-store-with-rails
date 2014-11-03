@@ -31,7 +31,7 @@ class CreatingProductsTest < ActionDispatch::IntegrationTest
   end
 
   test 'does not create books with valid data' do
-    post '/products', { product: {
+    post '#/products', { product: {
       name: nil,
       rarity: 7
       } }.to_json,

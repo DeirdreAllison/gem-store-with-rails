@@ -1,17 +1,39 @@
 <!DOCTYPE html>
 <html ng-app="gemStore">
-
-  <body ng-controller="StoreController" data-ng-init="index()">
+ <body ng-controller="StoreController" data-ng-init="index()">
     <!--  Store Header  -->
     <header>
       <h1 class="text-center">Flatlander Crafted Gems</h1>
     </header>
-
     <!--  Products Container  -->
     <div class="list-group">
       <!--  Product Container  -->
-      <input type="text" data-ng-model-"newProduct.product_body">
-      <button data-ng-click="create(newProduct)">Save New Product</button>
+      <form name="newProductForm">
+      <label>Name</label>
+      <input type="text" required data-ng-model="product.name">
+      <br>
+      <label>Description</label>
+      <input type="text" data-ng-model="product.description">
+      <br>
+      <label>Shine</label>
+      <input data-ng-model="product.shine">
+      <br>
+      <label>Price</label>
+      <input data-ng-model="product.price">
+      <br>
+      <label>Rarity</label>
+      <input data-ng-model="product.rarity">
+      <br>
+      <label>Color</label>
+      <input data-ng-model="product.color">
+      <br>
+      <label>Faces</label>
+      <input data-ng-model="product.faces">
+      <br>
+      <label>Image URL</label>
+      <input data-ng-model="product.image">
+      <button data-ng-disabled="newProductForm.$invalid" data-ng-click="create(product)" class="btn btn-primary">Save New Product</button>
+      </form>
 
       <div class="list-group-item" ng-repeat="product in products">
         <h3>{{product.name}} <em class="pull-right">{{product.price | currency}}</em></h3>
@@ -21,8 +43,42 @@
 
         <!-- Product Tabs  -->
         <product-tabs></product-tabs>
-      </div>
 
+        <button data-ng-click="product.editing=true" class="btn btn-primary">Edit</button>
+        <div data-ng-show="product.editing">
+          <label>Name</label>
+          <input type="text" required data-ng-model="product.name">
+          <br>
+          <label>Description</label>
+          <input type="text" data-ng-model="product.description">
+          <br>
+          <label>Shine</label>
+          <input data-ng-model="product.shine">
+          <br>
+          <label>Price</label>
+          <input data-ng-model="product.price">
+          <br>
+          <label>Rarity</label>
+          <input data-ng-model="product.rarity">
+          <br>
+          <label>Color</label>
+          <input data-ng-model="product.color">
+          <br>
+          <label>Faces</label>
+          <input data-ng-model="product.faces">
+          <br>
+          <label>Image URL</label>
+          <input data-ng-model="product.image">
+          <button data-ng-click="update(product)" class="btn btn-primary">Save</button>
+          <button data-ng-click="product.editing = false">Cancel</button>
+        </div>
+
+        <button data-ng-click="product.deleteConfirm=true" data-ng-hide="product.deleteConfirm" class="btn btn-primary">Delete</button>
+        <div data-ng-show="product.deleteConfirm">
+          <button data-ng-click="destroy(product)" class="btn btn-primary">Confirm</button>
+          <button data-ng-click="product.deleteConfirm = false" class="btn btn-primary">Cancel</button>
+        </div>
+      </div>
     </div>
   </body>
 </html>

@@ -3,7 +3,6 @@ require 'test_helper'
 class ListingCategoriesTest < ActionDispatch::IntegrationTest
   setup do
     Product.create!(category: 'Fancy', name: 'Opal')
-    Product.create!(category: nil, name: 'Aquamarine')
   end
 
   test 'list product categories in JSON' do

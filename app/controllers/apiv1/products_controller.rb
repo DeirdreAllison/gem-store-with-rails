@@ -11,7 +11,16 @@ module Apiv1
     def create
       product = Product.new(product_params)
       if product.save
-        render json: product, status: 201, location: product
+        render json: product, status: 201
+      else
+        render json: product.errors, status: 422
+      end
+    end
+
+    def update
+      product = Product.find(params[:id])
+      if product.update(product_params)
+        render json: product, status: 201
       else
         render json: product.errors, status: 422
       end

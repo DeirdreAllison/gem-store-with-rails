@@ -14,7 +14,7 @@ class ListingProductsTest < ActionDispatch::IntegrationTest
   end
 
   test 'listing products' do
-  get '/products'
+  get '#/products'
 
   assert_equal 200, response.status
   assert_equal Mime::JSON, response.content_type
@@ -24,7 +24,7 @@ class ListingProductsTest < ActionDispatch::IntegrationTest
   end
 
   test 'lists rare products' do
-    get '/products?rarity=7'
+    get '#/products?rarity=7'
 
     assert_equal 200, response.status
     assert_equal Mime::JSON, response.content_type
